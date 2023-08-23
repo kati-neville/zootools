@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
 	BarChart,
 	Bar,
@@ -13,8 +13,8 @@ import {
 	StyledGraphViewWrapper,
 	StyledTooltip,
 } from "@/components/styles/cards/card.styles";
-import { Bold, P } from "@/components/styles/text.styles";
 import { Graphdata } from "@/lib/types";
+import { Bold, P } from "@/components/styles/text.styles";
 
 export const GraphView = ({ tab }: { tab: string }) => {
 	const [barData, setBarData] = useState<{ x?: number; y?: number }>({});
@@ -45,9 +45,7 @@ export const GraphView = ({ tab }: { tab: string }) => {
 						cursor={{ fill: "transparent" }}
 						position={{ x: barData.x! - 50, y: barData.y! - 90 }}
 						content={content => {
-							const signupCount = useMemo(() => {
-								return content.payload?.[0]?.payload.signupCount;
-							}, [content.payload?.[0]?.payload.signupCount]);
+							const signupCount = content.payload?.[0]?.payload.signupCount;
 
 							return (
 								<StyledTooltip>
