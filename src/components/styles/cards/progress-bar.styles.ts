@@ -23,7 +23,7 @@ export const StyledProgressbar = styled.div<{ width: string }>`
 	width: ${({ width }) => width};
 	position: absolute;
 	border-radius: 10px;
-	animation: ${progressBar} 1.5s linear;
+	animation: ${progressBar} 500ms linear;
 
 	@media ${device.xs} {
 		border-radius: 6px;

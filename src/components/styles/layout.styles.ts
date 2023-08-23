@@ -7,7 +7,7 @@ export const Flex = styled.div<{ justifycontent?: string; $nowrap?: boolean }>`
 	align-items: center;
 	width: 100%;
 
-	@media ${device.xs} {
+	@media ${device.md} {
 		flex-direction: ${({ $nowrap }) => ($nowrap ? "row" : "column")};
 		justify-content: flex-start;
 		align-items: flex-start;

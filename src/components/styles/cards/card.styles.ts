@@ -7,6 +7,7 @@ export const StyledCard = styled.div<{ padding?: string; height?: string }>`
 	background-color: ${({ theme }) => theme.colors.zooWhite};
 	border-radius: 10px;
 	padding: ${({ padding }) => padding || "1rem 2.5rem"};
+	height: ${({ height }) => height || "29rem"};
 	min-height: ${({ height }) => height || "29rem"};
 	justify-content: space-between;
 	display: flex;
@@ -14,7 +15,8 @@ export const StyledCard = styled.div<{ padding?: string; height?: string }>`
 
 	@media ${device.sm} {
 		padding: 2rem 1.6rem;
-		min-height: 25rem;
+		height: auto;
+		min-height: ${({ height }) => height || "30rem"};
 		box-shadow: rgba(0, 0, 0, 0.125) 0px 3px 10px 3px;
 	}
 `;
@@ -37,6 +39,11 @@ export const StyledTooltip = styled.div`
 	border-width: 1px;
 	border-color: ${({ theme }) => theme.colors.zooGray300};
 	border-style: solid;
+	width: fit-content;
+
+	@media ${device.xs} {
+		padding: 2px;
+	}
 `;
 
 export const StyledGraphViewWrapper = styled.div`

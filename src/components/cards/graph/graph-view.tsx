@@ -1,6 +1,4 @@
-"use client";
-
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import {
 	BarChart,
 	Bar,
@@ -19,6 +17,7 @@ import { Bold, P } from "@/components/styles/text.styles";
 export const GraphView = ({ tab }: { tab: string }) => {
 	const [barData, setBarData] = useState<{ x?: number; y?: number }>({});
 	const [data, setData] = useState<Graphdata[]>([]);
+	const toolTipRef = useRef(null);
 
 	useEffect(() => {
 		async function getLeaderBoardData() {
@@ -30,6 +29,10 @@ export const GraphView = ({ tab }: { tab: string }) => {
 
 		getLeaderBoardData();
 	}, [tab]);
+
+	//@ts-ignore
+	const toolTipWidth = toolTipRef.current?.clientWidth;
+	const memoToolTipWidth = useMemo(() => toolTipWidth, [toolTipWidth]);
 
 	return (
 		<StyledGraphViewWrapper>
@@ -43,20 +46,21 @@ export const GraphView = ({ tab }: { tab: string }) => {
 
 					<Tooltip
 						cursor={{ fill: "transparent" }}
-						position={{ x: barData.x! - 50, y: barData.y! - 90 }}
+						position={{
+							x: barData.x! - (memoToolTipWidth - 20) / 2,
+							y: barData.y! - 90,
+						}}
 						content={content => {
 							const signupCount = content.payload?.[0]?.payload.signupCount;
 
 							return (
-								<StyledTooltip>
-									<div className="custom-tooltip">
-										<p className="intro">
-											<Bold>{signupCount?.toLocaleString()}</Bold> signups
-										</p>
-										<P fontSize="1rem" textalign="center" className="desc">
-											August 26
-										</P>
-									</div>
+								<StyledTooltip ref={toolTipRef}>
+									<P>
+										<Bold>{signupCount?.toLocaleString()}</Bold> signups
+									</P>
+									<P fontSize="1rem" textalign="center" className="desc">
+										August 26
+									</P>
 								</StyledTooltip>
 							);
 						}}
@@ -67,6 +71,7 @@ export const GraphView = ({ tab }: { tab: string }) => {
 						fill={theme.colors.zooYellow200}
 						onMouseOver={data => setBarData(data)}
 						onMouseLeave={data => setBarData(data)}
+						animationDuration={500}
 					/>
 				</BarChart>
 			</ResponsiveContainer>

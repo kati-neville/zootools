@@ -31,13 +31,11 @@ const LeaderBoard = () => {
 
 	return (
 		<CardWrapper title="User leaderboard" buttonText="See leaderboard">
-			<Spacer height="2rem" />
-
 			<Table>
 				<TableHead>
 					<TableRow>
 						<Heading>Email</Heading>
-						<Heading>Friends invited</Heading>
+						<Heading textalign="right">Friends invited</Heading>
 						<Heading>Country</Heading>
 					</TableRow>
 				</TableHead>

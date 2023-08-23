@@ -12,21 +12,26 @@ export const TableHead = styled.thead``;
 export const TableRow = styled.tr`
 	width: 100%;
 	text-align: left;
+	vertical-align: top;
 `;
 
 export const Heading = styled.th<{
 	fontSize?: { xs: string; default: string };
 	fontWeight?: string;
 	color?: string;
+	textalign?: string;
 }>`
 	font-size: ${({ fontSize }) =>
 		fontSize?.default ? fontSize.default : "1rem"};
 	color: ${({ theme, color }) => color || theme.colors.zooGray400};
 	font-weight: ${({ fontWeight }) => (fontWeight ? fontWeight : "400")};
+	align-items: flex-start;
+	padding-bottom: 10px;
 
 	@media ${device.xs} {
 		font-size: ${({ fontSize }) =>
 			fontSize?.default ? fontSize.default : "0.8rem"};
+		text-align: ${({ textalign }) => textalign || "left"};
 	}
 `;
 

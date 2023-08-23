@@ -15,7 +15,7 @@ export const Bold = styled.span<{ color?: string }>`
 	font-weight: 700;
 	color: ${({ theme, color }) => theme.colors.zooBlack || color};
 
-	@media ${device.xs} {
-		font-weight: 500;
+	@media ${device.md} {
+		font-weight: 400;
 	}
 `;

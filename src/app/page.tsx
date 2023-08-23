@@ -1,6 +1,5 @@
 import { Metadata } from "next";
 import HomePage from "./home";
-import LeaderBoard from "@/components/cards/leaderboard";
 
 export const metadata: Metadata = {
 	title: "ZooTools insights",

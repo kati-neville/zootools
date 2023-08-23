@@ -1,11 +1,13 @@
+import { device } from "@/lib/breakpoints";
 import { styled } from "styled-components";
+import * as RadioGroup from "@radix-ui/react-radio-group";
 
 export enum TabVariant {
 	SHADOWED = "shadowed",
 	NON_SHADOWED = "non-shadowed",
 }
 
-export const StyledTabs = styled.div<{ variant?: TabVariant }>`
+export const StyledTabs = styled(RadioGroup.Root)<{ variant?: TabVariant }>`
 	display: flex;
 	align-items: center;
 	border-radius: 10px;
@@ -13,9 +15,13 @@ export const StyledTabs = styled.div<{ variant?: TabVariant }>`
 		variant === TabVariant.SHADOWED ? "rgba(0, 0, 0, 0.125) 0px 3px 3px" : ""};
 	padding: 0.3rem 0.4rem;
 	background-color: white;
+
+	@media ${device.xs} {
+		padding: 0.3rem 0;
+	}
 `;
 
-export const StyledTab = styled.button<{
+export const StyledTab = styled(RadioGroup.Item)<{
 	$isactive?: boolean;
 	variant?: TabVariant;
 }>`

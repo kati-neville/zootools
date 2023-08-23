@@ -24,14 +24,14 @@ export const Tabs: React.FC<TabsProps> = ({
 	}
 
 	return tabs?.length! > 0 ? (
-		<StyledTabs variant={variant}>
+		<StyledTabs variant={variant} onValueChange={handleTabClick}>
 			{tabs?.map(tab => {
 				return (
 					<StyledTab
 						key={tab.value}
+						value={tab.value}
 						variant={variant}
-						$isactive={activeTab === tab.value}
-						onClick={() => handleTabClick(tab.value)}>
+						$isactive={activeTab === tab.value}>
 						{tab.label}
 					</StyledTab>
 				);
