@@ -6,7 +6,7 @@ export const P = styled.p<{ fontSize?: string; textalign?: string }>`
 	color: ${({ theme }) => theme.colors.zooGray400};
 	text-align: ${({ textalign }) => textalign || "start"};
 
-	@media ${device.xs} {
+	@media ${device.md} {
 		font-size: 1rem;
 	}
 `;

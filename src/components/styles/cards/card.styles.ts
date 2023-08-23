@@ -13,7 +13,7 @@ export const StyledCard = styled.div<{ padding?: string; height?: string }>`
 	display: flex;
 	flex-direction: column;
 
-	@media ${device.sm} {
+	@media ${device.md} {
 		padding: 2rem 1.6rem;
 		height: auto;
 		min-height: ${({ height }) => height || "30rem"};
@@ -41,7 +41,7 @@ export const StyledTooltip = styled.div`
 	border-style: solid;
 	width: fit-content;
 
-	@media ${device.xs} {
+	@media ${device.md} {
 		padding: 2px;
 	}
 `;

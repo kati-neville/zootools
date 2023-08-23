@@ -16,7 +16,7 @@ export const StyledTabs = styled(RadioGroup.Root)<{ variant?: TabVariant }>`
 	padding: 0.3rem 0.4rem;
 	background-color: white;
 
-	@media ${device.xs} {
+	@media ${device.md} {
 		padding: 0.3rem 0;
 	}
 `;

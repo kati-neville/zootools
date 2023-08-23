@@ -20,7 +20,7 @@ export const StyledButton = styled.button<StyledButtonProps>`
 	&:hover {
 		background-color: rgba(0, 0, 0, 0.09);
 	}
-	@media ${device.xs} {
+	@media ${device.md} {
 		padding: ${({ padding }) => padding || "0.5rem 1.2rem"};
 	}
 `;

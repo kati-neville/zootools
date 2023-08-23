@@ -7,7 +7,7 @@ export const StyledProgressbarContainer = styled.div`
 	height: 2.5rem;
 	position: relative;
 
-	@media ${device.xs} {
+	@media ${device.md} {
 		height: 1.5rem;
 	}
 `;
@@ -25,7 +25,7 @@ export const StyledProgressbar = styled.div<{ width: string }>`
 	border-radius: 10px;
 	animation: ${progressBar} 500ms linear;
 
-	@media ${device.xs} {
+	@media ${device.md} {
 		border-radius: 6px;
 	}
 `;

@@ -28,7 +28,7 @@ export const Heading = styled.th<{
 	align-items: flex-start;
 	padding-bottom: 10px;
 
-	@media ${device.xs} {
+	@media ${device.md} {
 		font-size: ${({ fontSize }) =>
 			fontSize?.default ? fontSize.default : "0.8rem"};
 		text-align: ${({ textalign }) => textalign || "left"};
@@ -38,7 +38,7 @@ export const Heading = styled.th<{
 export const TableData = styled(Heading)`
 	font-size: 1rem;
 
-	@media ${device.xs} {
+	@media ${device.md} {
 		font-size: 0.8rem;
 	}
 `;
