@@ -1,9 +1,10 @@
 import { device } from "@/lib/breakpoints";
 import { styled } from "styled-components";
 
-export const P = styled.p<{ fontSize?: string }>`
+export const P = styled.p<{ fontSize?: string; textalign?: string }>`
 	font-size: ${({ fontSize }) => fontSize || "1.3rem"};
 	color: ${({ theme }) => theme.colors.zooGray400};
+	text-align: ${({ textalign }) => textalign || "start"};
 
 	@media ${device.xs} {
 		font-size: 1rem;

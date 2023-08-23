@@ -35,6 +35,6 @@ export const StyledTextWrapper = styled.div`
 	width: 100%;
 	display: flex;
 	align-items: center;
-	padding: 0 0 0 1.5rem;
+	padding: 0 0 0 1rem;
 	justify-content: space-between;
 `;

@@ -1,4 +1,3 @@
-import { device } from "@/lib/breakpoints";
 import { styled } from "styled-components";
 
 export const StyledContainer = styled.main`

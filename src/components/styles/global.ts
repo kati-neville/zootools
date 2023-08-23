@@ -1,3 +1,4 @@
+import { theme } from "@/lib/theme";
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyles = createGlobalStyle`
@@ -6,7 +7,7 @@ const GlobalStyles = createGlobalStyle`
     margin: 0
 }
 body {
-    background-color: ${({ theme }) => theme.colors.zooGray100};
+    background-color: ${theme.colors.zooGray100};
     padding: 3rem 0rem;
 }
 `;

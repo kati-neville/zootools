@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
-import { StyledTitleProps } from "@/lib/types";
 import { device } from "@/lib/breakpoints";
+import { StyledTitleProps } from "@/lib/types";
 
 export const StyledTitle = styled.h3<StyledTitleProps>`
 	font-size: ${({ fontSize }) => fontSize || "1.5rem"};

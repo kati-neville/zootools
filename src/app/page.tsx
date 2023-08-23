@@ -1,5 +1,6 @@
 import { Metadata } from "next";
-import { HomePage } from "./home";
+import HomePage from "./home";
+import LeaderBoard from "@/components/cards/leaderboard";
 
 export const metadata: Metadata = {
 	title: "ZooTools insights",
@@ -7,6 +8,6 @@ export const metadata: Metadata = {
 		"View statistics and details about your marketing campaigns with ZooTools",
 };
 
-export default function Home() {
+export default async function Home() {
 	return <HomePage />;
 }

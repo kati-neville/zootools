@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { CardWrapper } from "./card-wrapper";
 import { Title } from "../title";
 import { Flex } from "../styles/layout.styles";
@@ -7,8 +7,12 @@ import { Spacer } from "../styles/spacer.styles";
 import { TabValues } from "@/lib/types";
 import { TabVariant } from "../styles/tabs/tabs.styles";
 import SvgUsers from "../icons/users";
+import { GraphView } from "./graph/graph-view";
 
 export const Graph = () => {
+	const defaultTab = "30d";
+	const [tab, setTab] = useState(defaultTab);
+
 	const tabs: TabValues[] = [
 		{
 			label: "1h",
@@ -27,6 +31,7 @@ export const Graph = () => {
 			value: "60d",
 		},
 	];
+
 	return (
 		<>
 			<Flex>
@@ -35,7 +40,12 @@ export const Graph = () => {
 					titleStyles={{ fontWeight: "600" }}
 				/>
 
-				<Tabs tabs={tabs} variant={TabVariant.SHADOWED} />
+				<Tabs
+					tabs={tabs}
+					variant={TabVariant.SHADOWED}
+					onTabChange={e => setTab(e)}
+					defaultTab={defaultTab}
+				/>
 			</Flex>
 
 			<Spacer height="3rem" />
@@ -46,7 +56,7 @@ export const Graph = () => {
 					<SvgUsers strokeWidth={2} style={{ marginLeft: 10 }} width={20} />
 				}
 				subTitle="Participants">
-				<div></div>
+				<GraphView tab={tab} />
 			</CardWrapper>
 		</>
 	);

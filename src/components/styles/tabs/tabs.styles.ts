@@ -16,7 +16,7 @@ export const StyledTabs = styled.div<{ variant?: TabVariant }>`
 `;
 
 export const StyledTab = styled.button<{
-	isactive?: boolean;
+	$isactive?: boolean;
 	variant?: TabVariant;
 }>`
 	border-radius: 10px;
@@ -31,10 +31,11 @@ export const StyledTab = styled.button<{
 	margin: 0 4px;
 	color: ${({ variant, theme }) =>
 		variant === TabVariant.SHADOWED ? theme.colors.zooGray500 : ""};
-	background-color: ${({ isactive, theme, variant }) => {
-		const isShadowedAndActive = variant === TabVariant.SHADOWED && isactive;
-		const isShadowedAndNotActive = variant === TabVariant.SHADOWED && !isactive;
-		const isNonShadowedAndActive = variant !== TabVariant.SHADOWED && isactive;
+	background-color: ${({ $isactive, theme, variant }) => {
+		const isShadowedAndActive = variant === TabVariant.SHADOWED && $isactive;
+		const isShadowedAndNotActive =
+			variant === TabVariant.SHADOWED && !$isactive;
+		const isNonShadowedAndActive = variant !== TabVariant.SHADOWED && $isactive;
 
 		return isShadowedAndActive
 			? theme.colors.zooGray300
@@ -44,4 +45,11 @@ export const StyledTab = styled.button<{
 			? theme.colors.zooGray100
 			: "transparent";
 	}};
+
+	&:hover {
+		background-color: ${({ variant, theme }) =>
+			variant === TabVariant.SHADOWED
+				? theme.colors.zooGray300
+				: theme.colors.zooGray200};
+	}
 `;

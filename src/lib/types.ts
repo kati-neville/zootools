@@ -16,3 +16,19 @@ export interface Size {
 	lg: string;
 	xl: string;
 }
+
+export interface LeaderboardData {
+	email: string;
+	invitees: number;
+	country: string;
+}
+
+export interface StatsData {
+	icon?: string;
+	name: string;
+	count: number;
+}
+
+export interface Graphdata {
+	signupCount: number;
+}

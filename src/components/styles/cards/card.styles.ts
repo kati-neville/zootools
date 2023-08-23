@@ -28,3 +28,18 @@ export const StyledDetailsSection = styled.section`
 		grid-template-columns: repeat(1, 1fr);
 	}
 `;
+
+export const StyledTooltip = styled.div`
+	box-shadow: rgba(0, 0, 0, 0.125) 3px 3px 3px 3px;
+	background-color: white;
+	padding: 16px;
+	border-radius: 10px;
+	border-width: 1px;
+	border-color: ${({ theme }) => theme.colors.zooGray300};
+	border-style: solid;
+`;
+
+export const StyledGraphViewWrapper = styled.div`
+	width: "100%";
+	height: 24rem;
+`;

@@ -1,22 +1,37 @@
-import React from "react";
+"use client";
+
 import { CardWrapper } from "./card-wrapper";
 import { ProgressBar } from "./progress-bar";
+import { StatsData } from "@/lib/types";
+import React, { useEffect, useState } from "react";
 
 export const Location = () => {
+	const [tab, setTab] = useState("");
+	const [data, setData] = useState<StatsData[]>([]);
+
+	useEffect(() => {
+		async function getSignUpStatsData() {
+			const response = await fetch(`/api/signup-data?filter=${tab}`);
+			const result: { data: StatsData[] } = await response.json();
+
+			setData(result.data);
+		}
+
+		getSignUpStatsData();
+	}, [tab]);
+
 	return (
 		<CardWrapper
 			title="Sign up location"
 			buttonText="See all countries"
+			onTabChange={tab => setTab(tab)}
 			tabs={[
 				{ label: "Country", value: "country" },
 				{ label: "City", value: "city" },
 			]}>
-			<ProgressBar />
-			<ProgressBar />
-			<ProgressBar />
-			<ProgressBar />
-			<ProgressBar />
-			<ProgressBar />
+			{data?.map((data, idx) => {
+				return <ProgressBar key={data.name + idx} data={data} />;
+			})}
 		</CardWrapper>
 	);
 };
