@@ -7,7 +7,7 @@ export type StyledTitleProps = {
 	fontSize?: string;
 	fontWeight?: string;
 	color?: string;
-	paddingBottom?: string;
+	paddingbottom?: string;
 };
 
 export interface Size {

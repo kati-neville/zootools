@@ -40,7 +40,7 @@ export const CardWrapper = ({
 					subText={subTitle}
 					icon={icon}
 					titleStyles={{ fontWeight: "700", ...titleStyles }}
-					paddingBottom={titleContainerBottomPadding}
+					paddingbottom={titleContainerBottomPadding}
 				/>
 				<Tabs tabs={tabs} onTabChange={onTabChange} />
 			</Flex>

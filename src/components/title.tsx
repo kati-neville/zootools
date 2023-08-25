@@ -11,17 +11,17 @@ interface TitleProps {
 	subText?: string;
 	titleStyles?: StyledTitleProps;
 	icon?: JSX.Element;
-	paddingBottom?: string;
+	paddingbottom?: string;
 }
 export const Title = ({
 	text,
 	titleStyles,
 	subText,
 	icon,
-	paddingBottom,
+	paddingbottom,
 }: TitleProps) => {
 	return (
-		<TitleContainer paddingBottom={paddingBottom}>
+		<TitleContainer paddingbottom={paddingbottom}>
 			<StyledTitle {...titleStyles}>
 				{text}
 				{icon}

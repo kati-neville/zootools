@@ -28,5 +28,5 @@ export const StyledSubText = styled.span<StyledTitleProps>`
 export const TitleContainer = styled.span<StyledTitleProps>`
 	display: flex;
 	flex-direction: column;
-	padding-bottom: ${({ paddingBottom }) => paddingBottom};
+	padding-bottom: ${({ paddingbottom }) => paddingbottom};
 `;
