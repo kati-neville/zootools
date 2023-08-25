@@ -4,8 +4,8 @@ import { Location } from "@/components/cards/location/location";
 import { render, screen, waitFor } from "@testing-library/react";
 
 describe("Sign up location section", () => {
-	test("Rendering  signup location data when clicked on Country", async () => {
-		render(<Location />);
+	test("Rendering signup location data when clicked on Country", async () => {
+		const { debug } = render(<Location />);
 
 		const buttonSource = screen.getByRole("radio", { name: "Country" });
 		expect(buttonSource).toBeInTheDocument();
