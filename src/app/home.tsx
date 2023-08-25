@@ -12,25 +12,25 @@ import { StyledContainer } from "@/components/styles/container.styles";
 import { StyledDetailsSection } from "@/components/styles/cards/card.styles";
 
 export default function HomePage({ children }: { children?: ReactNode }) {
-	return (
-		<StyledContainer>
-			<Graph />
+  return (
+    <StyledContainer>
+      <Graph />
 
-			<Spacer height="5rem" />
+      <Spacer height="5rem" />
 
-			<Insights />
+      <Insights />
 
-			<Spacer height="5rem" />
+      <Spacer height="5rem" />
 
-			<StyledDetailsSection>
-				<LeaderBoard />
+      <StyledDetailsSection>
+        <LeaderBoard />
 
-				<Traffic />
+        <Traffic />
 
-				<Location />
+        <Location />
 
-				<Behaviour />
-			</StyledDetailsSection>
-		</StyledContainer>
-	);
+        <Behaviour />
+      </StyledDetailsSection>
+    </StyledContainer>
+  );
 }
