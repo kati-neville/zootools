@@ -1,5 +1,12 @@
 An analytic dashboard with insights while using ZooTools for marketing campaigns
 
+## Tools used
+
+- Next JS
+- TypeScript
+- Styled components
+- Jest and React Testing Library
+
 ## Getting Started
 
 To run this locally,
