@@ -16,7 +16,7 @@ export const Location = () => {
 			setData(result.data);
 		}
 		getSignUpStatsData();
-	}, []);
+	}, [tab]);
 
 	return (
 		<CardWrapper
