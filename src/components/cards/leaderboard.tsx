@@ -20,10 +20,9 @@ const LeaderBoard = () => {
 	useEffect(() => {
 		async function getLeaderBoardData() {
 			const response = await fetch(`/api/leaderboard`);
-			const result: { leaderboardData: LeaderboardData[] } =
-				await response.json();
+			const result: { data: LeaderboardData[] } = await response.json();
 
-			setData(result.leaderboardData);
+			setData(result.data);
 		}
 
 		getLeaderBoardData();

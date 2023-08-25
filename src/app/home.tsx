@@ -12,17 +12,6 @@ import { StyledContainer } from "@/components/styles/container.styles";
 import { StyledDetailsSection } from "@/components/styles/cards/card.styles";
 
 export default function HomePage({ children }: { children?: ReactNode }) {
-	// useEffect(() => {
-	// 	async function fetchData() {
-	// 		const data = await fetch("http://localhost:3000/api/leaderboard").then(
-	// 			data => data.json().then(data => data)
-	// 		);
-	// 		console.log("DATA: ------ ", data);
-	// 	}
-
-	// 	fetchData();
-	// }, []);
-
 	return (
 		<StyledContainer>
 			<Graph />

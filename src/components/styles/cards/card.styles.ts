@@ -1,10 +1,11 @@
 import { device } from "@/lib/breakpoints";
+import { theme } from "@/lib/theme";
 import { styled } from "styled-components";
 
 export const StyledCard = styled.div<{ padding?: string; height?: string }>`
 	width: 100%;
 	box-shadow: rgba(0, 0, 0, 0.125) 3px 3px 3px;
-	background-color: ${({ theme }) => theme.colors.zooWhite};
+	background-color: ${({}) => theme.colors.zooWhite};
 	border-radius: 10px;
 	padding: ${({ padding }) => padding || "1rem 2.5rem"};
 	height: ${({ height }) => height || "29rem"};
@@ -37,7 +38,7 @@ export const StyledTooltip = styled.div`
 	padding: 16px;
 	border-radius: 10px;
 	border-width: 1px;
-	border-color: ${({ theme }) => theme.colors.zooGray300};
+	border-color: ${({}) => theme.colors.zooGray300};
 	border-style: solid;
 	width: fit-content;
 

@@ -1,6 +1,7 @@
 import { device } from "@/lib/breakpoints";
 import { styled } from "styled-components";
 import * as RadioGroup from "@radix-ui/react-radio-group";
+import { theme } from "@/lib/theme";
 
 export enum TabVariant {
 	SHADOWED = "shadowed",
@@ -35,9 +36,9 @@ export const StyledTab = styled(RadioGroup.Item)<{
 		variant === TabVariant.SHADOWED ? "1rem" : "0.9rem"};
 	padding: 0.5rem 0.7rem;
 	margin: 0 4px;
-	color: ${({ variant, theme }) =>
+	color: ${({ variant }) =>
 		variant === TabVariant.SHADOWED ? theme.colors.zooGray500 : ""};
-	background-color: ${({ $isactive, theme, variant }) => {
+	background-color: ${({ $isactive, variant }) => {
 		const isShadowedAndActive = variant === TabVariant.SHADOWED && $isactive;
 		const isShadowedAndNotActive =
 			variant === TabVariant.SHADOWED && !$isactive;
@@ -51,11 +52,15 @@ export const StyledTab = styled(RadioGroup.Item)<{
 			? theme.colors.zooGray100
 			: "transparent";
 	}};
+	transition: all 0.5s linear;
 
 	&:hover {
-		background-color: ${({ variant, theme }) =>
+		background-color: ${({ variant }) =>
 			variant === TabVariant.SHADOWED
 				? theme.colors.zooGray300
 				: theme.colors.zooGray200};
+	}
+	&:active {
+		transform: scale(0.2);
 	}
 `;

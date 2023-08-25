@@ -13,12 +13,10 @@ export const Location = () => {
 		async function getSignUpStatsData() {
 			const response = await fetch(`/api/signup-data?filter=${tab}`);
 			const result: { data: StatsData[] } = await response.json();
-
 			setData(result.data);
 		}
-
 		getSignUpStatsData();
-	}, [tab]);
+	}, []);
 
 	return (
 		<CardWrapper

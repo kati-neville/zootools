@@ -24,5 +24,5 @@ const leaderboardData: LeaderboardData[] = [
 ];
 
 export async function GET() {
-	return new Response(JSON.stringify({ leaderboardData }));
+	return new Response(JSON.stringify({ data: leaderboardData }));
 }

@@ -6,10 +6,12 @@ import { StatsData } from "@/lib/types";
 export const CardData = ({ data }: { data?: StatsData }) => {
 	return (
 		<StyledTextWrapper>
-			<P style={{ zIndex: 10 }}>
+			<P id="data-metric" style={{ zIndex: 10 }}>
 				{data?.icon} {data?.name}{" "}
 			</P>
-			<P style={{ zIndex: 10 }}>{data?.count?.toLocaleString()}</P>
+			<P id="value" style={{ zIndex: 10 }}>
+				{data?.count?.toLocaleString()}
+			</P>
 		</StyledTextWrapper>
 	);
 };

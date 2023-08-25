@@ -1,4 +1,5 @@
 import { device } from "@/lib/breakpoints";
+import { theme } from "@/lib/theme";
 import { styled } from "styled-components";
 
 export const Table = styled.table`
@@ -23,7 +24,7 @@ export const Heading = styled.th<{
 }>`
 	font-size: ${({ fontSize }) =>
 		fontSize?.default ? fontSize.default : "1rem"};
-	color: ${({ theme, color }) => color || theme.colors.zooGray400};
+	color: ${({ color }) => color || theme.colors.zooGray400};
 	font-weight: ${({ fontWeight }) => (fontWeight ? fontWeight : "400")};
 	align-items: flex-start;
 	padding-bottom: 10px;

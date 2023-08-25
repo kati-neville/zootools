@@ -1,11 +1,12 @@
 import { styled } from "styled-components";
 import { device } from "@/lib/breakpoints";
 import { StyledTitleProps } from "@/lib/types";
+import { theme } from "@/lib/theme";
 
 export const StyledTitle = styled.h3<StyledTitleProps>`
 	font-size: ${({ fontSize }) => fontSize || "1.5rem"};
 	font-weight: ${({ fontWeight }) => fontWeight || "400"};
-	color: ${({ theme, color }) => color || theme.colors.zooBlack};
+	color: ${({ color }) => color || theme.colors.zooBlack};
 	display: flex;
 	align-items: center;
 
@@ -17,7 +18,7 @@ export const StyledTitle = styled.h3<StyledTitleProps>`
 export const StyledSubText = styled.span<StyledTitleProps>`
 	font-size: ${({ fontSize }) => fontSize || "1.2rem"};
 	font-weight: ${({ fontWeight }) => fontWeight || "400"};
-	color: ${({ theme }) => theme.colors.zooBlack};
+	color: ${({}) => theme.colors.zooBlack};
 
 	@media ${device.md} {
 		font-size: 1.1rem;

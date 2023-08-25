@@ -13,12 +13,13 @@ export const Traffic = () => {
 		async function getTrafficBoardData() {
 			const response = await fetch(`/api/traffic?filter=${tab}`);
 			const result: { data: StatsData[] } = await response.json();
-
 			setData(result.data);
 		}
 
 		getTrafficBoardData();
 	}, [tab]);
+
+	console.log("DATA --- ", data);
 
 	return (
 		<CardWrapper

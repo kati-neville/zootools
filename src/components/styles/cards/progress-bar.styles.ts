@@ -1,6 +1,7 @@
 import { device } from "@/lib/breakpoints";
 import { Flex } from "../layout.styles";
 import { keyframes, styled } from "styled-components";
+import { theme } from "@/lib/theme";
 
 export const StyledProgressbarContainer = styled.div`
 	width: 100%;
@@ -18,7 +19,7 @@ from {
 }
 `;
 export const StyledProgressbar = styled.div<{ width: string }>`
-	background-color: ${({ theme }) => theme.colors.zooYellow100};
+	background-color: ${({}) => theme.colors.zooYellow100};
 	height: 100%;
 	width: ${({ width }) => width};
 	position: absolute;
