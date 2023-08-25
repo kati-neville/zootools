@@ -17,6 +17,7 @@ interface CardWrapperProps {
 	titleStyles?: StyledTitleProps;
 	onTabChange?: (tab: string) => void;
 	cardStyles?: { padding?: string; height?: string };
+	titleContainerBottomPadding?: string;
 }
 
 export const CardWrapper = ({
@@ -29,6 +30,7 @@ export const CardWrapper = ({
 	cardStyles,
 	icon,
 	onTabChange,
+	titleContainerBottomPadding,
 }: CardWrapperProps) => {
 	return (
 		<StyledCard {...cardStyles}>
@@ -38,6 +40,7 @@ export const CardWrapper = ({
 					subText={subTitle}
 					icon={icon}
 					titleStyles={{ fontWeight: "700", ...titleStyles }}
+					paddingBottom={titleContainerBottomPadding}
 				/>
 				<Tabs tabs={tabs} onTabChange={onTabChange} />
 			</Flex>

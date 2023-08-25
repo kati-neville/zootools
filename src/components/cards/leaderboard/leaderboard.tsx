@@ -29,9 +29,10 @@ const LeaderBoard = () => {
 	}, []);
 
 	return (
-		<CardWrapper title="User leaderboard" buttonText="See leaderboard">
-			<Spacer height="2rem" />
-
+		<CardWrapper
+			title="User leaderboard"
+			buttonText="See leaderboard"
+			titleContainerBottomPadding="2rem">
 			<Table>
 				<TableHead>
 					<TableRow>
@@ -40,8 +41,6 @@ const LeaderBoard = () => {
 						<Heading>Country</Heading>
 					</TableRow>
 				</TableHead>
-
-				<Spacer height="1rem" />
 
 				<TBody>
 					{data?.map(({ country, invitees, email }, idx) => {

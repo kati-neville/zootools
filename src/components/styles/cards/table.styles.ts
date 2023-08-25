@@ -45,4 +45,11 @@ export const TableData = styled(Heading)`
 	}
 `;
 
-export const TBody = styled.tbody``;
+export const TBody = styled.tbody`
+	&::before {
+		content: "-";
+		display: block;
+		height: 0.8rem;
+		color: transparent;
+	}
+`;

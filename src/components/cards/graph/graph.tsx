@@ -55,9 +55,6 @@ export const Graph = () => {
 				icon={
 					<SvgUsers strokeWidth={2} style={{ marginLeft: 10 }} width={20} />
 				}
-				cardStyles={{
-					padding: "2rem 2.5rem",
-				}}
 				subTitle="Participants">
 				<GraphView tab={tab} />
 			</CardWrapper>
