@@ -1,11 +1,11 @@
 import { Title } from "../title";
 import { Tabs } from "../tabs/tab";
 import React, { ReactNode } from "react";
+import { Flex } from "../styles/layout.styles";
+import { Spacer } from "../styles/spacer.styles";
 import { StyledButton } from "../styles/button.styles";
 import { StyledCard } from "../styles/cards/card.styles";
 import { StyledTitleProps, TabValues } from "@/lib/types";
-import { Flex } from "../styles/layout.styles";
-import { Spacer } from "../styles/spacer.styles";
 
 interface CardWrapperProps {
 	children: ReactNode;
@@ -13,10 +13,10 @@ interface CardWrapperProps {
 	buttonText?: string;
 	tabs?: TabValues[];
 	subTitle?: string;
-	titleStyles?: StyledTitleProps;
-	cardStyles?: { padding?: string; height?: string };
 	icon?: JSX.Element;
+	titleStyles?: StyledTitleProps;
 	onTabChange?: (tab: string) => void;
+	cardStyles?: { padding?: string; height?: string };
 }
 
 export const CardWrapper = ({

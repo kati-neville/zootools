@@ -1,8 +1,8 @@
 "use client";
 
-import { CardWrapper } from "./card-wrapper";
-import { ProgressBar } from "./progress-bar";
 import { StatsData } from "@/lib/types";
+import { CardWrapper } from "../card-wrapper";
+import { ProgressBar } from "../progress-bar";
 import React, { useEffect, useState } from "react";
 
 export const Location = () => {

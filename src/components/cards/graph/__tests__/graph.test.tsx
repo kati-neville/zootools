@@ -1,4 +1,4 @@
-import { Graph } from "@/components/cards/graph";
+import { Graph } from "@/components/cards/graph/graph";
 import { render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 

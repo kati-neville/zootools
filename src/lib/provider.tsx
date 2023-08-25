@@ -7,10 +7,10 @@ import { theme } from "./theme";
 import GlobalStyles from "@/components/styles/global";
 
 export const Provider = ({ children }: { children: ReactNode }) => {
-	return (
-		<StyledComponentsRegistry>
-			<GlobalStyles />
-			<ThemeProvider theme={theme}>{children}</ThemeProvider>
-		</StyledComponentsRegistry>
-	);
+  return (
+    <StyledComponentsRegistry>
+      <GlobalStyles />
+      <ThemeProvider theme={theme}>{children}</ThemeProvider>
+    </StyledComponentsRegistry>
+  );
 };

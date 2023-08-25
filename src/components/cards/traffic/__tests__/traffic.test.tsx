@@ -1,11 +1,10 @@
-import { Traffic } from "@/components/cards/traffic";
-import { render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import { mockStatsData } from "../mocks/handlers";
+import { Traffic } from "@/components/cards/traffic/traffic";
+import { render, screen, waitFor } from "@testing-library/react";
 
 describe("Traffic section", () => {
 	it("Rendering traffic data when clicked on Source", async () => {
-		const { debug } = render(<Traffic />);
+		render(<Traffic />);
 
 		const buttonSource = screen.getByRole("radio", { name: /Source/ });
 		expect(buttonSource).toBeInTheDocument();

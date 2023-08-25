@@ -29,8 +29,8 @@ export const StyledTab = styled(RadioGroup.Item)<{
 	border-radius: 10px;
 	width: fit-content;
 	border: none;
-	font-weight: ${({ variant }) =>
-		variant === TabVariant.SHADOWED ? "600" : "500"};
+	font-weight: ${({ variant, $isactive }) =>
+		variant === TabVariant.SHADOWED || $isactive ? "600" : "500"};
 	cursor: pointer;
 	font-size: ${({ variant }) =>
 		variant === TabVariant.SHADOWED ? "1rem" : "0.9rem"};
@@ -53,6 +53,7 @@ export const StyledTab = styled(RadioGroup.Item)<{
 			: "transparent";
 	}};
 	transition: all 0.5s linear;
+	font-family: "Karla", sans-serif;
 
 	&:hover {
 		background-color: ${({ variant }) =>

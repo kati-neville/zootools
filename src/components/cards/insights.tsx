@@ -19,9 +19,9 @@ export const Insights = () => {
 			subTitle="Making analytics simple and actionable"
 			cardStyles={{
 				padding: "2.5rem",
-				height: "23rem",
+				height: "27rem",
 			}}>
-			<Spacer height="1.2rem" />
+			<Spacer height="4rem" mdheight="1rem" />
 
 			<Grid>
 				<GridColumn>

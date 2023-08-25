@@ -1,6 +1,6 @@
-import { mockStatsData } from "../mocks/handlers";
+import { mockStatsData } from "@/mocks/handlers";
 import userEvent from "@testing-library/user-event";
-import { Location } from "@/components/cards/location";
+import { Location } from "@/components/cards/location/location";
 import { render, screen, waitFor } from "@testing-library/react";
 
 describe("Sign up location section", () => {

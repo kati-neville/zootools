@@ -1,6 +1,6 @@
-import LeaderBoard from "@/components/cards/leaderboard";
+import { mockLeaderData } from "@/mocks/handlers";
 import { render, screen, waitFor } from "@testing-library/react";
-import { mockLeaderData } from "../mocks/handlers";
+import LeaderBoard from "@/components/cards/leaderboard/leaderboard";
 
 describe("Test leaderboard section", () => {
 	it("Rendering leaderboard data when the page loads", async () => {

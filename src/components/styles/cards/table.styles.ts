@@ -33,6 +33,7 @@ export const Heading = styled.th<{
 		font-size: ${({ fontSize }) =>
 			fontSize?.default ? fontSize.default : "0.8rem"};
 		text-align: ${({ textalign }) => textalign || "left"};
+		padding-bottom: 5px;
 	}
 `;
 

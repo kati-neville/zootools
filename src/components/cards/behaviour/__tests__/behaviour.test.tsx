@@ -1,7 +1,6 @@
-import { Behaviour } from "@/components/cards/behaviour";
-import { render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import { mockStatsData } from "../mocks/handlers";
+import { Behaviour } from "@/components/cards/behaviour/behaviour";
+import { render, screen, waitFor } from "@testing-library/react";
 
 describe("Behaviour section", () => {
 	test("Rendering behaviour data when clicked on browsers", async () => {

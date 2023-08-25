@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { CardWrapper } from "./card-wrapper";
-import { ProgressBar } from "./progress-bar";
+import { CardWrapper } from "../card-wrapper";
+import { ProgressBar } from "../progress-bar";
 import { StatsData } from "@/lib/types";
 
 export const Behaviour = () => {

@@ -13,11 +13,14 @@ import {
 } from "@/components/styles/cards/card.styles";
 import { Graphdata } from "@/lib/types";
 import { Bold, P } from "@/components/styles/text.styles";
+import * as RadixTooltip from "@radix-ui/react-tooltip";
 
 export const GraphView = ({ tab }: { tab: string }) => {
-	const [barData, setBarData] = useState<{ x?: number; y?: number }>({});
+	const [barData, setBarData] = useState<{
+		data?: any;
+		show?: boolean;
+	}>({});
 	const [data, setData] = useState<Graphdata[]>([]);
-	const toolTipRef = useRef(null);
 
 	useEffect(() => {
 		async function getLeaderBoardData() {
@@ -30,9 +33,24 @@ export const GraphView = ({ tab }: { tab: string }) => {
 		getLeaderBoardData();
 	}, [tab]);
 
-	//@ts-ignore
-	const toolTipWidth = toolTipRef.current?.clientWidth;
-	const memoToolTipWidth = useMemo(() => toolTipWidth, [toolTipWidth]);
+	useEffect(() => {
+		const defaultTooltip = document.querySelector(".recharts-tooltip-wrapper");
+		if (!defaultTooltip) return;
+		// Init tooltip values
+		const tooltipHeight = defaultTooltip.getBoundingClientRect().height;
+		const tooltipWidth = defaultTooltip.getBoundingClientRect().width;
+		const spaceForLittleTriangle = 20;
+
+		// @ts-ignore
+		defaultTooltip.style = `
+		  transform: translate(${barData.data?.x}px, ${barData.data?.y}px);
+		  pointer-events: none;  position: absolute;
+		  top: -${tooltipHeight + spaceForLittleTriangle}px;
+		  left: -${tooltipWidth / 2 - barData.data.width! / 2}px;
+		  opacity: ${barData?.show ? "1" : 0};
+		  transition: all 400ms ease 0s;
+		`;
+	}, [barData]);
 
 	return (
 		<StyledGraphViewWrapper>
@@ -47,30 +65,33 @@ export const GraphView = ({ tab }: { tab: string }) => {
 					<Tooltip
 						cursor={{ fill: "transparent" }}
 						position={{
-							x: barData.x! - (memoToolTipWidth - 20) / 2,
-							y: barData.y! - 90,
+							x: barData.data?.x! ?? 0,
+							y: barData.data?.y! ?? 0,
 						}}
+						allowEscapeViewBox={{ x: true, y: false }}
 						content={content => {
 							const signupCount = content.payload?.[0]?.payload.signupCount;
+							const period = content.payload?.[0]?.payload.period;
 
 							return (
-								<StyledTooltip ref={toolTipRef}>
+								<StyledTooltip>
 									<P>
 										<Bold>{signupCount?.toLocaleString()}</Bold> signups
 									</P>
 									<P fontSize="1rem" textalign="center" className="desc">
-										August 26
+										{period}
 									</P>
 								</StyledTooltip>
 							);
 						}}
 					/>
+
 					<Bar
 						dataKey="signupCount"
 						radius={50}
 						fill={theme.colors.zooYellow200}
-						onMouseOver={data => setBarData(data)}
-						onMouseLeave={data => setBarData(data)}
+						onMouseOver={data => setBarData({ data: data, show: true })}
+						onMouseLeave={data => setBarData({ data: data, show: false })}
 						animationDuration={500}
 					/>
 				</BarChart>

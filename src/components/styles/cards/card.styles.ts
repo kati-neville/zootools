@@ -7,7 +7,7 @@ export const StyledCard = styled.div<{ padding?: string; height?: string }>`
 	box-shadow: rgba(0, 0, 0, 0.125) 3px 3px 3px;
 	background-color: ${({}) => theme.colors.zooWhite};
 	border-radius: 10px;
-	padding: ${({ padding }) => padding || "1rem 2.5rem"};
+	padding: ${({ padding }) => padding || "1.5rem 2.5rem"};
 	height: ${({ height }) => height || "29rem"};
 	min-height: ${({ height }) => height || "29rem"};
 	justify-content: space-between;
@@ -34,13 +34,28 @@ export const StyledDetailsSection = styled.section`
 
 export const StyledTooltip = styled.div`
 	box-shadow: rgba(0, 0, 0, 0.125) 3px 3px 3px 3px;
-	background-color: white;
+	background-color: ${theme.colors.zooWhite};
 	padding: 16px;
 	border-radius: 10px;
 	border-width: 1px;
-	border-color: ${({}) => theme.colors.zooGray300};
+	border-bottom-width: 0px;
+	border-color: ${theme.colors.zooGray300};
 	border-style: solid;
 	width: fit-content;
+
+	&::after {
+		content: "";
+		height: 0;
+		width: 0;
+		position: absolute;
+		bottom: -10px;
+		left: 50%;
+		transform: translateX(-50%);
+		border-style: solid;
+		border-width: 10px 10px 0 10px;
+		border-top-color: white;
+		border-color: ${theme.colors.zooWhite} transparent transparent transparent;
+	}
 
 	@media ${device.md} {
 		padding: 2px;
@@ -49,5 +64,5 @@ export const StyledTooltip = styled.div`
 
 export const StyledGraphViewWrapper = styled.div`
 	width: "100%";
-	height: 24rem;
+	height: 26rem;
 `;

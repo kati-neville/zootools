@@ -9,6 +9,7 @@ const GlobalStyles = createGlobalStyle`
 body {
     background-color: ${theme.colors.zooGray100};
     padding: 3rem 0rem;
+    font-family: 'Karla', sans-serif;
 }
 `;
 

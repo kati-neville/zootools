@@ -18,6 +18,7 @@ export const StyledButton = styled.button<StyledButtonProps>`
 	cursor: pointer;
 	font-size: 0.9rem;
 	transition: all 0.5s linear;
+	font-family: "Karla", sans-serif;
 
 	&:hover {
 		background-color: rgba(0, 0, 0, 0.09);

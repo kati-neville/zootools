@@ -31,4 +31,5 @@ export interface StatsData {
 
 export interface Graphdata {
 	signupCount: number;
+	period: string;
 }

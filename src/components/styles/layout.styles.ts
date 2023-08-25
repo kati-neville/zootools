@@ -23,7 +23,7 @@ export const Grid = styled.div`
 
 	@media ${device.md} {
 		grid-template-columns: repeat(1, 1fr);
-		gap: 1rem;
+		gap: 3rem;
 	}
 `;
 

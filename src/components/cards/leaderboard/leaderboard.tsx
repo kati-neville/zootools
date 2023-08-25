@@ -8,9 +8,9 @@ import {
 	TableData,
 	TableHead,
 	TableRow,
-} from "../styles/cards/table.styles";
-import { CardWrapper } from "./card-wrapper";
-import { Spacer } from "../styles/spacer.styles";
+} from "../../styles/cards/table.styles";
+import { CardWrapper } from "../card-wrapper";
+import { Spacer } from "../../styles/spacer.styles";
 import { LeaderboardData } from "@/lib/types";
 import { formatEmail } from "@/lib";
 
@@ -30,6 +30,8 @@ const LeaderBoard = () => {
 
 	return (
 		<CardWrapper title="User leaderboard" buttonText="See leaderboard">
+			<Spacer height="2rem" />
+
 			<Table>
 				<TableHead>
 					<TableRow>
@@ -38,6 +40,9 @@ const LeaderBoard = () => {
 						<Heading>Country</Heading>
 					</TableRow>
 				</TableHead>
+
+				<Spacer height="1rem" />
+
 				<TBody>
 					{data?.map(({ country, invitees, email }, idx) => {
 						return (

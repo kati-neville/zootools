@@ -1,13 +1,13 @@
-import React, { useState } from "react";
-import { CardWrapper } from "./card-wrapper";
-import { Title } from "../title";
-import { Flex } from "../styles/layout.styles";
-import { Tabs } from "../tabs/tab";
-import { Spacer } from "../styles/spacer.styles";
+import { Title } from "../../title";
+import { Tabs } from "../../tabs/tab";
 import { TabValues } from "@/lib/types";
-import { TabVariant } from "../styles/tabs/tabs.styles";
-import SvgUsers from "../icons/users";
-import { GraphView } from "./graph/graph-view";
+import React, { useState } from "react";
+import SvgUsers from "../../icons/users";
+import { GraphView } from "./graph-view";
+import { CardWrapper } from "../card-wrapper";
+import { Flex } from "../../styles/layout.styles";
+import { Spacer } from "../../styles/spacer.styles";
+import { TabVariant } from "../../styles/tabs/tabs.styles";
 
 export const Graph = () => {
 	const defaultTab = "30d";
@@ -55,6 +55,9 @@ export const Graph = () => {
 				icon={
 					<SvgUsers strokeWidth={2} style={{ marginLeft: 10 }} width={20} />
 				}
+				cardStyles={{
+					padding: "2rem 2.5rem",
+				}}
 				subTitle="Participants">
 				<GraphView tab={tab} />
 			</CardWrapper>
