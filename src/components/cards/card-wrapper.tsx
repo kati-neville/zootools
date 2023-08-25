@@ -8,50 +8,55 @@ import { StyledCard } from "../styles/cards/card.styles";
 import { StyledTitleProps, TabValues } from "@/lib/types";
 
 interface CardWrapperProps {
-  children: ReactNode;
-  title: string;
-  buttonText?: string;
-  tabs?: TabValues[];
-  subTitle?: string;
-  icon?: JSX.Element;
-  titleStyles?: StyledTitleProps;
-  onTabChange?: (tab: string) => void;
-  cardStyles?: { padding?: string; height?: string };
-  titleContainerBottomPadding?: string;
+	children: ReactNode;
+	title: string;
+	buttonText?: string;
+	tabs?: TabValues[];
+	subTitle?: string;
+	icon?: JSX.Element;
+	titleStyles?: StyledTitleProps;
+	onTabChange?: (tab: string) => void;
+	cardStyles?: {
+		padding?: string;
+		height?: string;
+		mdheight?: string;
+		smheight?: string;
+	};
+	titleContainerBottomPadding?: string;
 }
 
 export const CardWrapper = ({
-  children,
-  title,
-  buttonText,
-  tabs,
-  subTitle,
-  titleStyles,
-  cardStyles,
-  icon,
-  onTabChange,
-  titleContainerBottomPadding,
+	children,
+	title,
+	buttonText,
+	tabs,
+	subTitle,
+	titleStyles,
+	cardStyles,
+	icon,
+	onTabChange,
+	titleContainerBottomPadding,
 }: CardWrapperProps) => {
-  return (
-    <StyledCard {...cardStyles}>
-      <Flex>
-        <Title
-          text={title}
-          subText={subTitle}
-          icon={icon}
-          titleStyles={{ fontWeight: "700", ...titleStyles }}
-          paddingbottom={titleContainerBottomPadding}
-        />
-        <Tabs tabs={tabs} onTabChange={onTabChange} />
-      </Flex>
+	return (
+		<StyledCard {...cardStyles}>
+			<Flex>
+				<Title
+					text={title}
+					subText={subTitle}
+					icon={icon}
+					titleStyles={{ fontWeight: "700", ...titleStyles }}
+					paddingbottom={titleContainerBottomPadding}
+				/>
+				<Tabs tabs={tabs} onTabChange={onTabChange} />
+			</Flex>
 
-      <Spacer height="0.5rem" />
+			<Spacer height="0.5rem" />
 
-      {children}
+			{children}
 
-      <Spacer height="0.5rem" />
+			<Spacer height="0.5rem" />
 
-      {buttonText ? <StyledButton>{buttonText}</StyledButton> : null}
-    </StyledCard>
-  );
+			{buttonText ? <StyledButton>{buttonText}</StyledButton> : null}
+		</StyledCard>
+	);
 };
