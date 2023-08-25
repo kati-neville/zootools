@@ -3,53 +3,56 @@ import { theme } from "@/lib/theme";
 import { styled } from "styled-components";
 
 export const Table = styled.table`
-  width: 100%;
-  height: 80%;
-  border-collapse: collapse;
+	width: 100%;
+	height: 80%;
+	border-collapse: collapse;
 `;
 
 export const TableHead = styled.thead``;
 
 export const TableRow = styled.tr`
-  width: 100%;
-  text-align: left;
-  vertical-align: top;
+	width: 100%;
+	text-align: left;
+	vertical-align: top;
 `;
 
 export const Heading = styled.th<{
-  fontSize?: { xs: string; default: string };
-  fontWeight?: string;
-  color?: string;
-  textalign?: string;
+	fontSize?: { xs: string; default: string };
+	fontWeight?: string;
+	color?: string;
+	textalign?: string;
 }>`
-  font-size: ${({ fontSize }) =>
-    fontSize?.default ? fontSize.default : "1rem"};
-  color: ${({ color }) => color || theme.colors.zooGray400};
-  font-weight: ${({ fontWeight }) => (fontWeight ? fontWeight : "400")};
-  align-items: flex-start;
-  padding-bottom: 10px;
+	font-size: ${({ fontSize }) =>
+		fontSize?.default ? fontSize.default : "1rem"};
+	color: ${({ color }) => color || theme.colors.zooGray400};
+	font-weight: ${({ fontWeight }) => (fontWeight ? fontWeight : "400")};
+	align-items: flex-start;
+	padding-bottom: 10px;
 
-  @media ${device.md} {
-    font-size: ${({ fontSize }) =>
-      fontSize?.default ? fontSize.default : "0.8rem"};
-    text-align: ${({ textalign }) => textalign || "left"};
-    padding-bottom: 5px;
-  }
+	@media ${device.md} {
+		font-size: ${({ fontSize }) =>
+			fontSize?.default ? fontSize.default : "0.8rem"};
+		padding-bottom: 5px;
+	}
+
+	@media ${device.xs} {
+		text-align: ${({ textalign }) => textalign || "left"};
+	}
 `;
 
 export const TableData = styled(Heading)`
-  font-size: 1rem;
+	font-size: 1rem;
 
-  @media ${device.md} {
-    font-size: 0.8rem;
-  }
+	@media ${device.md} {
+		font-size: 0.8rem;
+	}
 `;
 
 export const TBody = styled.tbody`
-  &::before {
-    content: "-";
-    display: block;
-    height: 0.8rem;
-    color: transparent;
-  }
+	&::before {
+		content: "-";
+		display: block;
+		height: 0.8rem;
+		color: transparent;
+	}
 `;
