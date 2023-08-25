@@ -1,3 +1,5 @@
+# ZooTools Insight
+
 An analytic dashboard with insights while using ZooTools for marketing campaigns
 
 ## Tools used
