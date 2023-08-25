@@ -8,12 +8,17 @@ export const Table = styled.table`
 	border-collapse: collapse;
 `;
 
-export const TableHead = styled.thead``;
+export const TableHead = styled.thead`
+	vertical-align: middle;
+
+	@media ${device.lg} {
+		vertical-align: top;
+	}
+`;
 
 export const TableRow = styled.tr`
 	width: 100%;
 	text-align: left;
-	/* vertical-align: top; */
 `;
 
 export const Heading = styled.th<{
@@ -32,10 +37,6 @@ export const Heading = styled.th<{
 		font-size: ${({ fontSize }) =>
 			fontSize?.default ? fontSize.default : "0.8rem"};
 		padding-bottom: 5px;
-	}
-
-	@media ${device.xs} {
-		text-align: ${({ textalign }) => textalign || "left"};
 	}
 `;
 
